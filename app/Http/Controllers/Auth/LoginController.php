@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
     public function showLoginForm()
     {
         return view('auth.login');
@@ -28,7 +32,7 @@ class LoginController extends Controller
             // Redirect based on user role
             $role = Auth::user()->role;
             if ($role === 'admin') {
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('/admin/dashboard');
             } elseif ($role === 'pustakawan') {
                 return redirect()->intended('/pustakawan/dashboard');
             } elseif ($role === 'anggota') {
@@ -50,4 +54,21 @@ class LoginController extends Controller
 
         return redirect('/');
     }
+
+    public function redirectToRoleBasedDashboard()
+    {
+        $role = Auth::user()->role;
+        if ($role === 'admin') {
+            return redirect('/dashboard');
+        } elseif ($role === 'pustakawan') {
+            return redirect('/pustakawan/dashboard');
+        } elseif ($role === 'anggota') {
+            return redirect('/anggota/dashboard');
+        }
+    }
+
+    public function forgetPassword()
+    {
+        return view('auth.forgot-password');
+    }   
 }

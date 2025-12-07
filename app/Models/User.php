@@ -33,6 +33,14 @@ class User extends Authenticatable
     }
 
     /**
+     * Get all password reset tokens for this user
+     */
+    public function passwordResets(): HasMany
+    {
+        return $this->hasMany(PasswordReset::class);
+    }
+
+    /**
      * Get all loans for this user
      */
     public function loans(): HasMany
