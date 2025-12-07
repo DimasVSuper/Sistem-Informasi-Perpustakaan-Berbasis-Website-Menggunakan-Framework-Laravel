@@ -1,0 +1,85 @@
+# Laravel 11 - .gitignore
+# Environment variables
+.env
+.env.backup
+.env.production
+.env.*.php
+
+# IDE
+/.vscode
+/.idea
+/.fleet
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+/.phpunit.cache
+.phpunit.result.cache
+/coverage
+
+# Dependencies
+/vendor
+/node_modules
+/.pnp
+.pnp.js
+
+# Build
+/public/build
+/public/hot
+/storage/*.key
+/storage/debugbar
+
+# Storage
+/storage/app
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/testing
+/storage/framework/views
+/storage/logs
+
+# Logs
+/storage/logs/*.log
+*.log
+
+# NPM & Yarn
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Composer
+composer.lock
+auth.json
+
+# Homestead
+Homestead.json
+Homestead.yaml
+
+# IDE & Editor files
+*.sublime-project
+*.sublime-workspace
+.vimrc
+.code-workspace
+
+# OS files
+Thumbs.db
+.AppleDouble
+.LSOverride
+Desktop.ini
+
+# Database
+*.sqlite
+*.sqlite3
+
+# Debugging
+barryvdh/
+laravel-ide-helper.php
+
+# Misc
+.babelrc
+.cache
+.env.local
+.env.*.local
+.editorconfig
