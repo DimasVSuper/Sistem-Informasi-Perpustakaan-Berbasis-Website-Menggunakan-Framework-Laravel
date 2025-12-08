@@ -17,7 +17,7 @@ Sistem Informasi Perpustakaan adalah aplikasi web yang dirancang untuk mengelola
 > **Filosofi Pengembangan:**  
 > *"Terkadang simple tapi lancar dan cepat lebih baik daripada struktur folder views elit tapi susah"* 🚀
 >
-> Kami percaya bahwa kesederhanaan, kecepatan, dan kemudahan pemeliharaan lebih penting daripada kompleksitas struktural yang berlebihan. Fokus pada fungsionalitas dan user experience adalah prioritas utama.
+> Kesalahan saya adalah membuat Structure Folder Views yang sangat rapih dan Kompleks tapi mempersulit diri saya sendiri hehe......
 
 ---
 
