@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PasswordReset extends Model
 {
+    use HasFactory;
     public $timestamps = false;
 
     protected $table = 'password_resets';
@@ -49,7 +51,7 @@ class PasswordReset extends Model
      */
     public function isExpired(): bool
     {
-        return now()->isAfter($this->expires_at);
+                return $this->expires_at !== null && now()->isAfter($this->expires_at);
     }
 
     /**
@@ -65,6 +67,9 @@ class PasswordReset extends Model
      */
     public function markAsUsed(): void
     {
-        $this->update(['used_at' => now()]);
+                $updated = $this->update(['used_at' => now()]);
+        if ($updated === 0) {
+            throw new \Exception('Failed to mark password reset token as used.');
+        }
     }
 }
