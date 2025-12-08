@@ -23,7 +23,7 @@ class LoanController extends Controller
         $user = Auth::user();
         
         if ($user->role === 'anggota') {
-            $loans = $user->loans()->with('book')->paginate(10);
+            $loans = $user->Loan::loans()->with('book')->paginate(10);
         } else {
             $loans = Loan::with('user', 'book')->paginate(10);
         }

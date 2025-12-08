@@ -34,9 +34,9 @@ class DashboardController extends Controller
             return view('pages.pustakawan.dashboard', compact('stats'));
         } elseif ($user->role === 'anggota') {
             $stats = [
-                'total_peminjaman' => $user->loans()->count(),
-                'peminjaman_aktif' => $user->loans()->where('status', '!=', 'returned')->count(),
-                'peminjaman_overdue' => $user->loans()->where('status', 'overdue')->count(),
+                'total_peminjaman' => $user->Loan::loans()->count(),
+                'peminjaman_aktif' => $user->Loan::loans()->where('status', '!=', 'returned')->count(),
+                'peminjaman_overdue' => $user->Loan::loans()->where('status', 'overdue')->count(),
             ];
             return view('pages.anggota.dashboard', compact('stats'));
         }
