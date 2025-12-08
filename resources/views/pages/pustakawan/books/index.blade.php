@@ -115,8 +115,8 @@
     </div>
 
     @if($books->count() > 0)
-        <div class="card-footer">
-            {{ $books->links() }}
+        <div style="padding: 1rem;">
+            {{ $books->links('pagination::bootstrap-4') }}
         </div>
     @endif
 </div>

@@ -59,7 +59,7 @@
                         <i class="bi bi-search"></i> Cari
                     </button>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-3">
                     <a href="{{ route('pustakawan.loans.index') }}" class="btn btn-secondary w-100">
                         <i class="bi bi-arrow-clockwise"></i> Reset
                     </a>
